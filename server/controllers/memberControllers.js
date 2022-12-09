@@ -4,7 +4,15 @@ const Member = require('../models/memberModel')
 
 const getMembers = (req, res) => {
   console.log('getting members')
-  res.send(()=> console.log('got members'))
+  const members = []
+  Member.find((err, members) =>{
+    if(err) {
+      console.log('not able to retrieve list')
+    }
+    // console.log(members)
+    res.status(200).send(members).json()
+    console.log('members sent to client')
+  })
 }
 
 const addMember = (req, res) => {
