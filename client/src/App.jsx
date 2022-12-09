@@ -21,7 +21,7 @@ function App() {
     const res = await fetch('http://localhost:9000/getMembers')
     // const data = res.json()
     const data = await res.json()
-    console.log(data, 'response')
+    console.log(data.data, 'response')
   }
   // Add member
   const submitForm = (e, formData) => {

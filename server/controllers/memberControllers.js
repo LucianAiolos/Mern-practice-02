@@ -10,7 +10,10 @@ const getMembers = (req, res) => {
       console.log('not able to retrieve list')
     }
     // console.log(members)
-    res.status(200).send(members).json()
+    res.status(200).json({
+      message: 'List of members',
+      data: members
+    })
     console.log('members sent to client')
   })
 }
